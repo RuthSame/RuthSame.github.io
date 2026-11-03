@@ -2,8 +2,8 @@
 title: 数理逻辑
 description: 目录
 
-date: 2026-11-03T20:12:52+08:00
-lastmod: 2026-11-03T20:12:52+08:00
+date: 2026-11-03
+lastmod: 2026-11-03
 ---
 
 # mathematical-logic
