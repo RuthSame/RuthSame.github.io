@@ -1,6 +1,6 @@
 baseURL = 'https://RuthSame.github.io/'
 languageCode = 'zh-CN'
-title = '翕然'
+title = '翕然的博客'
 theme = 'hugo-theme-reimu'
 
 defaultContentLanguage = 'zh-CN'
