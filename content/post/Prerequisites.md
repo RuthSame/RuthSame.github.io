@@ -1,5 +1,5 @@
 ---
-title: 数理逻辑
+title: 数理逻辑项目目录
 description: 目录
 
 categories:
@@ -23,7 +23,7 @@ Popularization of mathematical logic
 
 目录
 
-[预备知识总序](https://github.com/RuthSame/mathematical-logic/blob/main/%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86%E6%80%BB%E5%BA%8F.md#%E5%BA%8F%E8%A8%80%E5%9C%A8%E7%9F%A5%E8%AF%86%E7%9A%84%E8%BE%B9%E7%95%8C%E4%B8%8A%E9%87%8D%E5%BB%BA%E8%B5%B7%E7%82%B9)
+[预备知识总序](https://ruthsame.github.io/post/preface/)
 [本项目计划](https://github.com/RuthSame/mathematical-logic/blob/main/%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%AE%A1%E5%88%92.md)
 [第零章：简史](https://github.com/RuthSame/mathematical-logic/blob/main/%E7%AE%80%E5%8F%B2.md)
 [第一章：元数学和数理逻辑的预备知识](https://github.com/RuthSame/mathematical-logic/blob/main/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91%E7%9A%84%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86.md)
