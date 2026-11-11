@@ -6,7 +6,7 @@ date: 2026-11-03
 lastmod: 2026-11-03
 ---
 
-# mathematical-logic
+## mathematical-logic
 
 [](https://github.com/RuthSame/mathematical-logic/blob/main/README.md#mathematical-logic)
 
