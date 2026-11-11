@@ -1,6 +1,6 @@
 ---
-title: 数理逻辑
-description: 目录
+title: 预备知识总序
+description: 序言
 
 date: 2026-11-03
 lastmod: 2026-11-03
