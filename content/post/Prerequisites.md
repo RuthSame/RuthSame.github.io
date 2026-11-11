@@ -2,6 +2,15 @@
 title: 数理逻辑
 description: 目录
 
+categories:
+  - 逻辑学
+
+tags:
+  - 逻辑学
+  - 数理逻辑
+  - 基础知识
+  - 预备知识
+
 date: 2026-11-03
 lastmod: 2026-11-03
 ---
