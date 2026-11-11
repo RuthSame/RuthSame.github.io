@@ -1,5 +1,5 @@
 ---
-title: 第一个计划
+title: 第一个计划——数理逻辑的序言
 description: 序言
 
 categories:
