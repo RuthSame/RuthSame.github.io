@@ -158,7 +158,7 @@ lastmod: 2026-11-05
 - **∃** ：“存在” (there exists)
 
 **注记 1.1.1**
-常用的逻辑联结词有四种主流的符号表述系统，详见[附录](https://ruthsame.github.io/post/Appendix/)
+常用的逻辑联结词有四种主流的符号表述系统，详见[附录](https://ruthsame.github.io/post/appendix/)
 
 **示例**
 以下命题都可以形式化为逻辑表达式：
@@ -179,7 +179,7 @@ lastmod: 2026-11-05
    - ∃x ∈ ℕ, (Even(x) ∧ Prime(x))
 
 **注记 1.1.2** 数学符号
-常见的数学符号及其定义请见[附录](https://ruthsame.github.io/post/Appendix/)
+常见的数学符号及其定义请见[附录](https://ruthsame.github.io/post/appendix/)
 
 **注记 1.1.3** 实数    
 还没有学习过[实数](https://zh.wikipedia.org/wiki/%E5%AE%9E%E6%95%B0)定义的初中生可以将其理解为是有理数和无理数的总称）
