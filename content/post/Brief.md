@@ -1,5 +1,5 @@
 ---
-title: 数理逻辑简历
+title: 数理逻辑简史
 description: 第一章
 math: true
 categories:

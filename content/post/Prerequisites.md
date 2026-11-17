@@ -28,4 +28,4 @@ Popularization of mathematical logic
 [第零章：简史](https://ruthsame.github.io/post/fristplan/)
 [第一章：元数学和数理逻辑的预备知识](https://ruthsame.github/brief)
 [第二章：集合论](https://ruthsame.github.io/post/set)
-[习题的参考答案](https://github.com/RuthSame/mathematical-logic/blob/main/%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88.md)
+[习题的参考答案](https://ruthsame.github.io/post/answers)
