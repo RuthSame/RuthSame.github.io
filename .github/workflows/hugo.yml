@@ -18,7 +18,7 @@ permissions:
 
 # Allow only one concurrent deployment
 concurrency:
-  group: "pages"
+  group: "pages-recovery"
   cancel-in-progress: false
 
 # Default to bash
