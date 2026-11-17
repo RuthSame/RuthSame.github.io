@@ -1,7 +1,7 @@
 ---
 title: 元数学和数理逻辑的预备知识
 description: 第一章
-
+math: true
 categories:
   - 逻辑学
 
