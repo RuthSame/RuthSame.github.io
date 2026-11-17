@@ -1,0 +1,566 @@
+---
+title: 数理逻辑项目习题答案
+description: 答案
+math: true
+
+categories:
+  - 逻辑学
+
+tags:
+  - 逻辑学
+  - 数理逻辑
+  - 基础知识
+  - 预备知识
+
+date: 2026-10-04
+lastmod: 2026-10-04
+---
+
+# 第一章
+
+**习题 1.2.1** 用归谬法证明“存在无穷多个素数”（欧几里得定理 Euclid's theorem）    
+**证明**    
+要证明“存在无穷多个素数”，  
+假设其否定：只有有限多个素数 $p_1, p_2, \ldots, p_n$ 。    
+考虑数 $N = (p_1 \times p_2 \times \cdots \times p_n) + 1$ 即这些素数的乘积再加 1 （我们也可以写作 $N = \prod_{i=1}^{n} p_i + 1$ ) ,    
+显然 $N$ 不被任何已知素数整除：      
+    若 $N$ 为素数，则多了一个新素数；      
+    若 $N$ 为合数，则其质因子也不在 $p_1, \ldots, p_n$​ 之中。   
+无论哪种情况，都与“素数有限”这一假设矛盾。      
+因此，假设中含矛盾，原命题成立。    
+ ∎    
+
+**习题 1.2.2** 用反证法证明“证明 $\sqrt{2}$​ 是无理数”    
+**证明**  
+假设 $\sqrt{2}$​ 是有理数。  
+则存在两个互质的正整数 $p, q$，使得 $\sqrt{2} = \frac{p}{q}$ ，    
+两边平方得 $2 = \frac{p^2}{q^2}， \quad \text{即} \quad p^2 = 2q^2$,    
+由此可见， $p^2$ 是 $2$ 的倍数，因此 $p^2$ 为偶数。   
+而平方是偶数仅当其底数也是偶数，因此 p 必为偶数。    
+设 $p=2s$，其中 $s$ 为整数。    
+代入上式得： $(2s)^2 = 2q^2， \quad 即 \quad 4s^2 = 2q^2， \quad 从而 \quad q^2 = 2s^2$,    
+因此 $q^2$ 也是偶数，进而 $q$ 亦为偶数。  
+于是 $p,q$ 均为偶数，这与假设“ $p,q$ 互质”相矛盾。    
+由此，原假设不成立，故 $\sqrt{2}$​ 不是有理数。  
+证毕。     
+ ∎    
+💡注意，许多命题的证明方法[并非唯一](https://arxiv.org/html/2410.14434v1#bib.bibx11)，本项目的所有答案都仅供读者参考。对于**习题 1.2.2**，纽约城的逻辑学家特南鲍姆（S. Tennenbaum）在上世纪五十年代就给出过一个[更具几何意味的证明](https://web.williams.edu/Mathematics/sjmiller/public_html/math/papers/Irrationality6_NJMathCamp2024v120.pdf)。
+
+**习题 1.2.3** 证明“一个整数能被 6 整除，当且仅当它能被 2 和 3 同时整除。”    
+**证明**    
+即要证明：    
+$6 \mid n \Leftrightarrow\ (2 \mid n) \land (3 \mid n)$。
+
+我们分两步证明这两个方向。
+（1）若 6∣n，则 2∣n 且 3∣n。       
+因为 $6 = 2 \times 3$，若 $6\mid n$，      
+则存在整数 $k$，使得 $n = 6k = (2 \times 3)k = 2(3k)$。    
+于是 $n$ 能被 $2$ 整除；同理， $n = 3(2k)$，因此 $n$ 也能被 3 整除。   
+因此 $2\mid n$ 且 $3\mid$  同时成立。   
+（2）若 2∣n 且 3∣n，则 6∣n。    
+若 $2\mid n$，则存在整数 $a$，使 $n = 2a$；    
+又因 $3\mid n$，存在整数 $b$，使 $n = 3b$。    
+于是 $2a = 3b$。因为 $2$ 与 $3$ 互质，根据整除的性质， 可得存在整数 $k$，使 $a=3k$， $b=2k$。      
+代回 $n=2a=2(3k)=6k$。   
+因此 $6\mid n$。  
+
+结论：    
+我们已经分别证明了      $6\mid n \Rightarrow (2\mid n \land 3\mid n)， \quad\text{以及}\quad (2\mid n \land 3\mid n) \Rightarrow 6\mid n$    
+因此：    
+$6 \mid n \Leftrightarrow\ (2 \mid n) \land (3 \mid n)$        
+ ∎
+
+**习题 1.2.4** 用构造性证明法证明“存在不是质数的自然数”    
+**证明** 
+显然，证明“存在不是质数的自然数”等同于反驳“所有自然数都是质数”，而“所有自然数都是质数”可以形式化为：    $\forall n\in\mathbb N,\ \text{Prime}(n)$    
+不妨构造反例： 取 $x=4$。    
+验证 $x=4$ 不是质数：      
+质数（素数）的标准定义是：大于 $1$ 且只以 $1$ 和自身为正因数的整数。      
+对 $4$ 而言：    
+
+1. $4>1$（满足“大于 1”的必要条件）；    
+2. $4=2×2$，其中 $2≠1$ 且 $2≠4$。也就是说，除了 $1$ 和 $4$ 之外， $4$ 还有正因数 $2$。    
+   因此， $4$ 不是质数（它是合数）。记号上可写作：     $\neg \text{Prime}(4)$。    
+   结论：    
+   由于 $\forall n\,\text{Prime}(n)$ 的否定等价于 $\exists n\,\neg\text{Prime}(n)$，而我们已构造出满足 $\neg\text{Prime}(4)$ 的具体数 $4$，故原命题为假。      
+   换句话说，一个具体反例就足以推翻一个“对所有……”的断言。      
+   ■
+
+📘**注记**
+
+- 自然数取法（{1,2,3,…} 或 {0,1,2,… }）不影响上述结论；在任何常见约定下，4 都不是质数。
+- 若担心“[1 是否为质数](https://zh.wikipedia.org/zh-hans/%E8%B4%A8%E6%95%B0)”的历史习惯差异，选用  x=4 作反例可避免歧义。
+
+**习题 1.2.5** A、B 两人进行这样一个数学游戏：在黑板上轮流写下 1 到 2000 中的任意一个整数（含边界， A 先写），但不能写下任何黑板上已存在的数的因子。当一方不能写出数字时该方则输。问：谁有必胜策略？如何用非构造性证明法证明？
+**证明**
+我们不直接写出具体的必胜策略，而是通过“间接推理”证明 A 必胜。    
+
+显然，该游戏有以下四个隐含条件    
+
+1. 无和局（无平局）  
+     规则只允许有限次行动（最多 2000 次），且无法行动的一方立即失败，因此不可能平局。
+2. 多走一步不吃亏（单调性）  
+     任意合法行动都会只减少双方后续可选数字的集合，不会为己方制造新的强制负担（不存在“多走反而更差”的情形）。  
+     特别地，首步写 1 不会给己方带来不利约束；写了 1 之后，1 对任何人都变成永久不可写（因为 1 是所有数的因子），这只会缩小对手选择。
+3. 公平性（对称性）  
+     除了先后手差异，规则对两位玩家完全一样：可选数字同属 1-2000 ，禁手规则（“不得写已有数的因子”）对双方一致。
+4. 信息完全（完全信息、无随机）  
+     所有已写数字公开可见，游戏无隐藏与随机因素，双方对局面有相同且完备的信息。
+
+于是我们可以认为该游戏不存在和局，且其中一人必胜。我们不妨考虑以下步骤：
+
+第一步：考虑一个改动后的游戏。  
+令 A′、B′ 两人玩一个类似的游戏，但这次只能写 2 到 2000 之间的整数（不允许写 1），规则与原游戏完全相同。  
+设这个新游戏为“简化版游戏”。
+
+第二步：分析两种可能情况。
+
+- 情形 1： 假设在简化版游戏中，A′ 有必胜策略。  
+    那么在原游戏中，A 可以直接模仿 A′ 的策略。  
+    因为在原游戏中写 1 并不会带来额外好处（1 写上后谁都不能再写 1），  
+    所以 A 只要按照简化版游戏中 A′ 的方式行动，照样能保证获胜。
+
+- 情形 2： 假设在简化版游戏中，B′ 有必胜策略。  
+    那么在原游戏中，A 首先写下 **1**。  
+    此时 1 已经被写出，后续任何人都不能再写 1（因为 1 是任何数的因子）。  
+    这样一来，从第二步开始的局面就与简化版游戏完全一致——  
+    此时由 B 来行动，他的位置正好相当于简化版游戏中的先手 A′。  
+    因为我们假设简化版游戏中先手（即 A′）有必胜策略，  
+    所以现在 B 处于“必胜方”的位置，而在原游戏中，A 却可以直接照搬这份策略。  
+    换言之，A 偷走了 B′ 的策略，从而也能获胜。    
+
+**第三步：总结。**  
+无论简化版游戏的必胜方是谁，A 总能利用相同的推理获得胜利。  
+因此，A 在原游戏中必有必胜策略。    
+ ■
+
+📘**注记**    
+这个证明并没有写出具体的取数规则，只说明“这样的策略一定存在”。      
+这类证明称为非构造性存在性证明（non-constructive existence proof）。      
+它依赖一个经典的逻辑技巧——策略偷换法（strategy stealing argument）：    
+
+> 如果后手在某个对称游戏中有必胜策略，那么先手总能先走一步，使局面等价，然后“复制”来那份策略。
+
+💡上述的证明过程，用更严谨的语言可以作如下描述，读者在进行本项目第二章的学习后可以回顾：
+
+**证明**
+显然，规则蕴含“不能重复写同一个数”，因为若黑板上已有 t，再写 t 等于写出了“已有数 t”的一个因子（就是它自己）。    
+
+定义“新游戏” G：同样规则，但允许写的数的范围是 2 到 2000（不含 1），先手记为 A′。
+
+我们证明：原游戏 G 与在首步写 1 之后的局面同构于 G′。  
+具体地，若把原游戏 G 里先手 A 的第一步固定为写 1，则此时黑板已有集合 $\lbrace 1 \rbrace$。根据规则，“接下来可写的数”是 $\lbrace 2, 3, \dots, 2000 \rbrace 
+  \setminus \bigcup_{x \in \lbrace 1 \rbrace} \mathrm{Div}(x)  = \lbrace 2, 3, \dots, 2000 \rbrace \setminus \lbrace 1 \rbrace = \lbrace 2, 3, \dots, 2000 \rbrace$ ,    
+
+因为 1 的因子只有 1 自身。此后任意时刻，若黑板上已有集合 $S\subseteq \lbrace 2,\dots,2000 \rbrace \cup \lbrace 1 \rbrace$，那么允许写的数为 $\lbrace 2,\dots,2000 \rbrace \setminus \bigcup_{x\in S}\mathrm{Div}(x)$,    
+
+这与 G′ 中在黑板已有 $S\setminus \lbrace 1 \rbrace$ 时的“允许写的数”完全相同。（在两边都不能写 1；在两边都禁止 $\lbrace 2,\dots,2000 \rbrace$ 中属于已写数的因子。）  
+因此，“原游戏在第一步写 1”之后的剩余博弈与 G′ 的博弈逐步对应。
+
+现在讨论 G′ 的胜负。    
+
+- 若 A′ 在 G 中有必胜策略，则在原游戏 G 里，A 直接“略过 1”按该策略行动即可（因为第一步 A 也可不写 1；即便写了 1，仍与 G′ 等价，见上文）。于是 A 必胜。    
+- 若 B′ 在 G′ 中有必胜策略，则在原游戏 G 里，A 首步写 1。如上所证，随后的局面与 G′ 的开局等价，此时轮到对手 B 落子，其处境与 G′ 里的先手 A′ 完全相同；既然 B′（即此处的 B）在 G′ 中有必胜策略，那么在等价的局面中 A 就能“偷换”这份策略到自己这边，从而确保最终取胜。于是 A 仍必胜。    
+
+两种情形都推出 A 必胜，故结论成立。
+
+🔍思考：学有余力的读者可以考虑，如何把上述论证扩展到一般的上界 N（把 2000 换成任意 N≥2），待我们完成了相关知识的学习，再来解答。
+
+# 第二章
+
+**习题 2.1.1**  证明 $\lbrace x \mid x = x \rbrace$ **不是**集合（即“所有对象组成的整体”不是集合）。    
+
+**证明**     
+由**定理2.1.1**可知，若 A 为任意集合，则存在一集合 $B$ 使得 $B\notin A$。不妨令 $A= \lbrace x \mid x = x \rbrace$，由分离公理和同一律可知此时不存在一集合 $B$ 使得 $B\notin A$（毕竟不可能 $B \neq B$），矛盾，因此 $A$ 不是集合。
+
+**习题 2.1.1** 题干略，除了选肢 (2) (5) (7) 是错误的以外，其余的都是正确的。
+
+**定理 2.1.2** 交集的基本性质
+
+(1)  $A \cap A = A$ （交集的幂等律）    
+**证明**     
+考虑任意 $x \in A$，根据交集的定义， $A \cap A =\lbrace x \mid x \in A \text { 且 } x \in A \rbrace$。由分离公理可知 $\lbrace x \mid x \in A \text { 且 } x \in A \rbrace$ 是一个集合。不妨设 $B = \lbrace x \mid x \in A \text { 且 } x \in A \rbrace$。根据合取去取规则， $(x \in A \text { 且 } x \in A) \Rightarrow x \in A$；而根据合取引入规则 $x \in A \Rightarrow (x \in A \text { 且 } x \in A)$，因此 $(x \in A \text { 且 } x \in A) \Longleftrightarrow x \in A$[^1]，从而 $B = \lbrace x \mid x \in A \rbrace$。根据分离公理可知，对于任意 $x \in A$ 都有 $x \in B$，且对于任意 $x \in B$ 都有 $x \in A$。从而，根据子集的定义有 $A \subseteq B$ 且 $B \subseteq A$。由外延公理可得 $B=A$，也即 $A \cap A = A$。        
+ ■
+
+(2)  $A \cap B = B \cap A$ （交集的交换律）    
+**证明**     
+根据外延公理，要证 $A \cap B = B \cap A$ 即证 $A \cap B \subseteq B \cap A$ 且 $B \cap A \subseteq A \cap B$。
+先证 $A \cap B \subseteq B \cap A$，由交集的定义可知 $B \cap A = \lbrace x \mid x \in B \text { 且 } x \in A \rbrace$。考虑任意 $x \in A \cap B$，都有 $x \in \lbrace x \mid x \in A \rbrace$ 且 $x \in \lbrace x \mid x \in B \rbrace$，由此根据交集和子集的定义可得， $A \cap B \subseteq \lbrace x \mid x \in B \text { 且 } x \in A \rbrace$，从而 $A \cap B \subseteq B \cap A$。    
+同理可得 $B \cap A \subseteq A \cap B$。    
+综上可得， $A \cap B = B \cap A$。    
+ ■    
+
+(4) $A \cap B \subseteq A$， $A \cap B \subseteq B$     
+**证明**    
+先证 $A \cap B \subseteq A$，考虑任意 $x \in A \cap B$，根据交集的定义可知 $A \cap B = \lbrace x \mid x \in B \text { 且 } x \in A \rbrace$。由合取消去规则可知，当 $x \in B \text { 且 } x \in A$ 时，必有 $x \in A$，因此由子集的定义可知 $A \cap B \subseteq A$。    
+同理可得 $A \cap B \subseteq B$。    
+ ■    
+
+(5) $B \subseteq A \Longleftrightarrow A \cap B = B$ （交集的吸收率）    
+**证明**    
+（→）：由外延公理可知，要证 $B \subseteq A \rightarrow A \cap B = B$ 需证当 $B \subseteq A$ 时， $A \cap B \subseteq B$ 且 $B \subseteq A \cap B$。而我们由**定理2.1.2**的(4)可知 $A \cap B \subseteq B$ 恒成立，从而我们只需要证明当 $B \subseteq A$ 时 $B \subseteq A \cap B$。考虑任意 $x \in A \cap B$，由交集的定义可知 $A \cap B = \lbrace x \mid x \in A \text { 且 } x \in B \rbrace$。又由子集的定义可知，当 $B \subseteq A$ 时对于任意 $x \in B$，都有 $x \in A$。进而，对于任意 $x \in B$ 都有 $x \in \lbrace x \mid x \in A \text { 且 } x \in B \rbrace$，根据子集和交集的定义可知 $B \subseteq A \cap B$。  综上 $B \subseteq A \rightarrow A \cap B = B$ 得证。    
+（←）：考虑任意 $x \in A \cap B$，根据交集定义可知 $x \in \lbrace x \mid x \in A \text { 且 } x \in B \rbrace$。假设 $B \not\subseteq A$，根据合取去取规则，此时任意 $x \in B$ 都有 $x \not\in \lbrace x \mid x \in A \text { 且 } x \in B \rbrace$，与前面的推论矛盾，故 $B \not\subseteq A$ 为假，根据排中律可知 $B \subseteq A$，命题得证。   
+综上所述， $B \subseteq A \Longleftrightarrow A \cap B = B$。    
+ ■    
+
+(6) $A \cap \varnothing = \varnothing$    
+**证明**    
+根据外延公理，要证 $A \cap \varnothing = \varnothing$，需证 $A \cap \varnothing \subseteq \varnothing$ 且 $\varnothing \subseteq A \cap \varnothing$。    
+先证 $A \cap \varnothing \subseteq \varnothing$。 考虑任意 $x \in A \cap \varnothing$，根据分离公理和交集的定义可知 $A \cap \varnothing = \lbrace x \mid x \in A \text { 且 } x \in \varnothing \rbrace$ 是一个集合。根据合取消除规则和子集的定义可知 $\lbrace x \mid x \in A \text { 且 } x \in \varnothing \rbrace \subseteq \lbrace x \mid x \in \varnothing \rbrace$，即 $A \cap \varnothing \subseteq \varnothing$。    
+再证 $\varnothing \subseteq A \cap \varnothing$。考虑任意 ，根据空集公理和分离公理可知 $A \cap \varnothing = \lbrace x \mid x \in A \text { 且 } x \neq x \rbrace$ 是一个集合。显然，根据交集的定义和保真规则，如果 $\varnothing \not\subseteq A \cap \varnothing$ 则有 $x \in A \text { 且 } x = x$，与 $A \cap \varnothing = \lbrace x \mid x \in A \text { 且 } x \neq x \rbrace$ 矛盾，故 $\varnothing \subseteq A \cap \varnothing$。[^2]     
+综上所述， $A \cap \varnothing = \varnothing$。    
+ ■    
+
+(7) 若 $A \subseteq C,\, B \subseteq D$，则 $A \cap B \subseteq C \cap D$ （交集的单调性）
+**证明**    
+考虑任意 $x \in A \cap B$，因为 $A \subseteq C,\, B \subseteq D$，由子集和交集的定义可知 $x \in C$ 且 $x \in D$，即 $x \in C \cap D$。从而根据子集的定义可知，对于任意的 $x \in A \cap B$ 都有 $x \in C \cap D$，即 $A \cap B \subseteq C \cap D$。    
+ ■    
+
+(8) 如果 $C \subseteq A$ 且 $C \subseteq B$，则 $C \subseteq A \cap B$    
+**证明**    
+考虑任意 $x \in C$，因为 $C \subseteq A$ 且 $C \subseteq B$，由子集定义得 $x \in A$ 且 $x \in B$，从而根据交集的定义和分离公理可知  $\lbrace x \mid x \in A \text { 且 } x \in B \rbrace= A \cap B$ 是一个集合。因此根据子集的定义可知 $C \subseteq A \cap B$。    
+ ■    
+
+**定理 2.1.8**    
+(2) $\mathcal P(A)\subseteq\mathcal P(B) \Longrightarrow A\subseteq B$。    
+**证明**    
+由子集的自反性可知显然有 $A\subseteq A$，故根据幂集的定义可知 $A\in\mathcal P(A)$，又因为 $\mathcal P(A)\subseteq\mathcal P(B)$，由子集的定义可知 $A\in\mathcal P(B)$，再根据幂集的定义可知 $A\subseteq B$。    
+ ■    
+
+(3) $\mathcal P(A)=\mathcal P(B)\Longleftrightarrow A=B$。    
+**证明**    
+（→）：当 $\mathcal P(A)=\mathcal P(B)$ 时，由外延公理和子集的定义可知 $\mathcal P(A)\subseteq\mathcal P(B)$ 且 $\mathcal P(B)\subseteq\mathcal P(A)$。从而由 (2) 可知 $A\subseteq B$ 且 $B\subseteq A$，故由子集的反对称性得 $A=B$。    
+（←）：当 $A=B$ 时，取任意 $x\in\mathcal P(A)$，由幂集的定义可知 $x\subseteq A$。又由于 $A=B$，根据外延公理和子集的定义可知 $x\subseteq B$，从而根据幂集的定义可知 $x\in\mathcal P(B)$，再根据子集的定义可知 $\mathcal P(A)\subseteq\mathcal P(B)$。同理可得 
+$\mathcal P(B)\subseteq\mathcal P(A)$，于是 $\mathcal P(A)=\mathcal P(B)$。    
+ ■        
+
+(4) $\mathcal P(A)\in\mathcal P(B)\Longrightarrow A\in B$。    
+**证明**    
+由 $\mathcal P(A)\in\mathcal P(B$) 及幂集的定义知 $\mathcal P(A)\subseteq B$。又因为子集的自反性可知 $A\subseteq A$，故根据子集的定义和幂集公理可知 $A\in\mathcal P(A)$，从而通过 $\mathcal P(A)\subseteq B$ 和子集的定义可得 $A\in B$。    
+ ■        
+
+(5) $\mathcal P(A)\cap\mathcal P(B)=\mathcal P(A\cap B)$。     
+**证明**    
+根据外延公理，要证 $\mathcal P(A)\cap\mathcal P(B)=\mathcal P(A\cap B)$，即证 $\mathcal P(A)\cap\mathcal P(B)\subseteq\mathcal P(A\cap B)$ 且 $\mathcal P(A\cap B)\subseteq\mathcal P(A)\cap\mathcal P(B)$。    
+先证 $\mathcal P(A)\cap\mathcal P(B)\subseteq\mathcal P(A\cap B)$：考虑任意 $x\in\mathcal P(A)\cap\mathcal P(B)$，由交集的定义可知， $x\in\mathcal P(A)$ 且 $x\in\mathcal P(B)$，从而由幂集的定义可知， $x\subseteq A$ 且 $x\subseteq B$，因此 $x\subseteq A\cap B$。故由幂集的定义可知 $x\in\mathcal P(A\cap B)$，从而 $\mathcal P(A)\cap\mathcal P(B) \subseteq \mathcal P(A\cap B)$。    
+再证 $\mathcal P(A\cap B)\subseteq\mathcal P(A)\cap\mathcal P(B)$：考虑任意 $x\in\mathcal P(A\cap B)$，由幂集的定义的定义可知 $x\subseteq A\cap B$。而由交集的定义又可得 $A\cap B\subseteq A$ 且 $A\cap B\subseteq B$，故 $x\subseteq A$  且 $x\subseteq B$，从而 $x\in\mathcal P(A)$ 且 $x\in\mathcal P(B)$。因此由交集的定义可知 $x\in\mathcal P(A)\cap\mathcal P(B)$，故根据子集的定义可得 $\mathcal P(A\cap B) \subseteq \mathcal P(A)\cap\mathcal P(B)$。    
+ ■        
+
+(6) $\mathcal P(A)\cup\mathcal P(B)\subseteq\mathcal P(A\cup B)$。    
+**证明**    
+考虑任意 $x\in\mathcal P(A)\cup\mathcal P(B)$，有并集公理可知 $x\in\mathcal P(A)$ 或 $x\in\mathcal P(B)$。从而由幂集的定义可知， $x\subseteq A$ 或 $x\subseteq B$。又因为通过并集的定义可知 $A\subseteq A\cup B$ 且 $B\subseteq A\cup B$，故无论哪种情况都有 $x\subseteq A\cup B$。于是 $x\in\mathcal P(A\cup B)$。因此 $\mathcal P(A)\cup\mathcal P(B) \subseteq \mathcal P(A\cup B)$。[^3]
+
+**习题 2.2.1** 证明： $(x,y,z)=(s,t,u)$ 当且仅当 $x=s,y=t,z=u$。    
+**证明**    
+由定义可知， $(x,y,z)=((x,y),z)$ $(s,t,u)=((s,t),u)$。假设 $(x,y,z)=(s,t,u)$， 则 $((x,y),z)=((s,t),u)$。根据引理 2.2.1 可知， $(x,y)=(s,t),z=u$。再次利用引理 2.2.1 可知， $x=s,y=t$。因此 $x=s,y=t,z=u$。
+
+反之，若 $x=s,y=t,z=u$，则 $(x,y)=(s,t)$。从而 $((x,y),z)=((s,t),u)$，即 $(x,y,z)=(s,t,u)$。故 $(x,y,z)=(s,t,u)$ 当且仅当 $x=s,y=t,z=u$。    
+
+**习题 2.2.2** 设 $A=\lbrace 1,2,3,4\rbrace , \qquad B=\lbrace 2,3,4,5\rbrace$，求 $A\times B$。    
+**解**    
+设 $A=\lbrace 1,2,3,4\rbrace , B=\lbrace 2,3,4,5\rbrace$。根据笛卡儿积的定义， $A\times B = \lbrace (a,b)\mid a\in A,\ b\in B\rbrace$。    
+
+因此   
+$A\times B=  \lbrace  (1,2),(1,3),(1,4),(1,5),  (2,2),(2,3),(2,4),(2,5),  (3,2),(3,3),(3,4),(3,5),  (4,2),(4,3),(4,4),(4,5)  \rbrace$    
+
+
+（即 $A\times B$ 共含有 $16$ 个有序对。）    
+
+**习题 2.2.3** 设集合 $A$ 恰含有 $n$ 个元素，集合 B 恰含有 $m$ 个元素，问 $A\times B$ 含有几个元素？        
+**解**    
+根据定义， $A\times B = \lbrace (a,b)\mid a\in A,\ b\in B\rbrace$ 对于每一个 $a\in A$，都有 $(a,b)$ 这样的有序对，其中 $b$ 可以取 $B$ 中任意一个元素。    
+由于 $B$ 有 $m$ 个元素，因此固定一个 $a$ 时，可得到 $m$ 个不同的有序对。而 $A$ 有 $n$ 个元素，因此这样的选择共有 $n$ 组。    
+我们不妨把 $A\times B$ 含有的元素个数写作 $|A\times B|$。于是 $|A\times B| = m+m+\cdots+m \quad(n\text{ 次}) = nm$。故 $|A\times B|=nm$。    
+
+**习题 2.2.4** 设 $A\times B = B\times A$。证明： $A=\varnothing \quad\text{或}\quad B=\varnothing \quad\text{或}\quad A=B$。    
+**证明**    
+若 $A=\varnothing$，则根据笛卡儿积的定义， $A\times B = \lbrace (a,b)\mid a\in A,\ b\in B\rbrace$ 由于空集没有元素，因此不存在 $a\in A$，从而不存在满足 $a\in A, b\in B$ 的有序对 $(a,b)$。
+故 $A\times B=\varnothing$。同理， $B\times A = \lbrace (b,a)\mid b\in B,\ a\in A\rbrace  = \varnothing$ 于是 $A\times B = \varnothing = B\times A$ 因此结论成立。     
+
+$B=\varnothing$ 的情形完全类似。    
+
+下面假设 $A\neq\varnothing,  B\neq\varnothing$，我们证明 $A=B$。
+先证 $A\subseteq B$     
+考虑任意 $a\in A$，由于 $B\neq\varnothing$，存在 $b\in B$，于是 $(a,b)\in A\times B$。    
+由题设 $A\times B=B\times A$ 故 $(a,b)\in B\times A$ 根据笛卡儿积的定义， $a\in B, b\in A$。因此任意 $a\in A$ 都属于 $B$，$故 A\subseteq B$。    
+再证 $B\subseteq A$    
+考虑任意 $b\in B$，由于 $A\neq\varnothing$，存在 $a\in A$，于是 $(a,b)\in A\times B$。    
+由题设， $(a,b)\in B\times A$。因此 $b\in A$，故 $B\subseteq A$。    
+由外延公理可知，此时 $A=B$。    
+
+综上，当 $A\times B = B\times A$ 时， $A=\varnothing \quad\text{或}\quad B=\varnothing \quad\text{或}\quad A=B$。    
+ ■        
+
+**习题 2.2.5** 证明：当 $R$ 为一个关系时， $\mathrm{dom}(R)$ 和 $\mathrm{ran}(R)$ 均为集合。    
+**证明**    
+先证 $\mathrm{dom}(R)$ 为集合。    
+由定义， $\mathrm{dom}(R) = \lbrace x\mid \exists y,\ (x,y)\in R\rbrace$。由于 $R$ 是关系，因此 $R$ 的每个元素都是有序对。    
+设 $(x,y)\in R$。根据有序对的定义， $(x,y)=\lbrace \lbrace x\rbrace ,\lbrace x,y\rbrace \rbrace$。于是 $\lbrace x\rbrace \in (x,y)$，从而 $x\in\bigcup\bigcup (x,y)$。    
+又因为 $(x,y)\in R$，故 $x\in\bigcup\bigcup\bigcup R$。    
+因此 $\mathrm{dom}(R) = \lbrace x\in\bigcup\bigcup\bigcup R \mid \exists y,\ (x,y)\in R\rbrace$。由于 $R$ 为集合，根据广义并公理， $\bigcup R$ 是集合，再次应用广义并公理， $\bigcup\bigcup R$ 是集合，第三次应用广义并公理， $\bigcup\bigcup\bigcup R$ 仍是集合。
+于是根据分离公理， $\lbrace x\in\bigcup\bigcup\bigcup R \mid \exists y,\ (x,y)\in R\rbrace$ 是集合。故 $\mathrm{dom}(R)$ 是集合。    
+
+再证 $\mathrm{ran}(R)$ 为集合。    
+由定义， $\mathrm{ran}(R) = \lbrace y\mid \exists x,\ (x,y)\in R\rbrace$。    
+若 $(x,y)\in R$，则 $\lbrace x,y\rbrace \in(x,y)$，从而 $y\in\bigcup\bigcup(x,y)$。于是 $y\in\bigcup\bigcup\bigcup R$。    
+故 $\mathrm{ran}(R) = \lbrace y\in\bigcup\bigcup\bigcup R \mid \exists x,\ (x,y)\in R\rbrace$。    
+前面已经说明 $\bigcup\bigcup\bigcup R$ 是集合。因此根据分离公理， $\mathrm{ran}(R)$ 也是集合。    
+
+综上， $\mathrm{dom}(R)$ 和 $\mathrm{ran}(R)$ 均为集合。    
+ ■        
+
+**引理 2.2.2** 设 $R$ 为关系。     
+(1) $\mathrm{dom}(R) = \mathrm{ran}(R^{-1})$。    
+**证明**    
+根据外延公理，要证 $\mathrm{dom}(R) = \mathrm{ran}(R^{-1})$，需证 $\mathrm{dom}(R)\subseteq \mathrm{ran}(R^{-1})$ 且 $\mathrm{ran}(R^{-1})\subseteq \mathrm{dom}(R)$。    
+
+先证 $\mathrm{dom}(R)\subseteq \mathrm{ran}(R^{-1})$。    
+任取 $x\in\mathrm{dom}(R)$ 根据定义域的定义，存在 $y$ 使得 $(x,y)\in R$。根据逆关系的定义， $(y,x)\in R^{-1}$。于是存在 $y$ 使得 $(y,x)\in R^{-1}$。根据值域的定义， $x\in\mathrm{ran}(R^{-1})$。故 $\mathrm{dom}(R)\subseteq \mathrm{ran}(R^{-1})$。    
+
+再证 $\mathrm{ran}(R^{-1})\subseteq \mathrm{dom}(R)$。    
+任取 $x\in\mathrm{ran}(R^{-1})$，根据值域的定义，存在 $y$ 使得 $(y,x)\in R^{-1}$。根据逆关系的定义， $(x,y)\in R$。因此存在 y 使得 $(x,y)\in R$。根据定义域的定义， $x\in\mathrm{dom}(R)$。故 $\mathrm{ran}(R^{-1}) \subseteq \mathrm{dom}(R)$。    
+
+综上， $\mathrm{dom}(R)=\mathrm{ran}(R^{-1})$。    
+ ■        
+
+(2) $\mathrm{ran}(R) = \mathrm{dom}(R^{-1})$。    
+**证明**    
+根据外延公理，要证 $\mathrm{ran}(R) = \mathrm{dom}(R^{-1})$，需证 $\mathrm{ran}(R)\subseteq \mathrm{dom}(R^{-1})$ 且 $\mathrm{dom}(R^{-1}) \subseteq \mathrm{ran}(R)$。    
+先证 $\mathrm{ran}(R)\subseteq \mathrm{dom}(R^{-1})$。    
+任取 $y\in\mathrm{ran}(R)$，根据值域的定义，存在 $x$ 使得 $(x,y)\in R$。由逆关系的定义， $(y,x)\in R^{-1}$，因此存在 $x$ 使得 $(y,x)\in R^{-1}$。根据定义域的定义， $y\in\mathrm{dom}(R^{-1})$。故 $\mathrm{ran}(R)\subseteq \mathrm{dom}(R^{-1})$。    
+
+再证 $\mathrm{dom}(R^{-1}) \subseteq \mathrm{ran}(R)$。    
+任取 $y\in\mathrm{dom}(R^{-1})$。根据定义域的定义，存在 $x$ 使得 $(y,x)\in R^{-1}$。由逆关系的定义， $(x,y)\in R$，因此存在 $x$ 使得 $(x,y)\in R$。
+根据值域的定义， $y\in\mathrm{ran}(R)$。故 $\mathrm{dom}(R^{-1}) \subseteq \mathrm{ran}(R)$。    
+
+综上， $\mathrm{ran}(R)=\mathrm{dom}(R^{-1})$。    
+ ■        
+
+(3) $(R^{-1})^{-1}=R$。    
+**证明**    
+根据外延公理，需证明两者的元素完全相同。    
+
+任取有序对 $(x,y)$，则根据逆关系的定义， $(x,y)\in (R^{-1})^{-1}$ 当且仅当 $(y,x)\in R^{-1}$。再次根据逆关系的定义 $(y,x)\in R^{-1}$，当且仅当 $(x,y)\in R$ 。    
+
+因此，对于任意有序对 $(x,y)$， $(x,y)\in (R^{-1})^{-1}$ 当且仅当 $(x,y)\in R$。    
+
+故根据外延公理， $(R^{-1})^{-1}=R$。   
+ ■        
+
+**引理 2.2.3** 设 $R_1,R_2,R_3$​ 为关系。       
+(2) $(R_2\cdot R_1)^{-1} = R_1^{-1}\cdot R_2^{-1}$。    
+**证明**    
+根据外延公理，要证 $(R_2\cdot R_1)^{-1} = R_1^{-1}\cdot R_2^{-1}$，需证 $(R_2\cdot R_1)^{-1} \subseteq R_1^{-1}\cdot R_2^{-1}$ 且 $R_1^{-1}\cdot R_2^{-1} \subseteq (R_2\cdot R_1)^{-1}$。    
+
+先证 $(R_2\cdot R_1)^{-1} \subseteq R_1^{-1}\cdot R_2^{-1}$。    
+考虑任意 $(x,y)\in (R_2\cdot R_1)^{-1}$，根据逆关系的定义， $(y,x)\in R_2\cdot R_1$。
+再根据复合关系的定义，存在 $z$ 使得 $yR_1z \quad\text{且}\quad zR_2x$。根据逆关系的定义， $zR_1^{-1}y \quad\text{且}\quad xR_2^{-1}z$，于是 $xR_2^{-1}z \quad\text{且}\quad zR_1^{-1}y$。再根据复合关系的定义， $x(R_1^{-1}\cdot R_2^{-1})y$，故 $(x,y)\in R_1^{-1}\cdot R_2^{-1}$，从而 $(R_2\cdot R_1)^{-1} \subseteq R_1^{-1}\cdot R_2^{-1}$。    
+
+下证 $R_1^{-1}\cdot R_2^{-1} \subseteq (R_2\cdot R_1)^{-1}$。    
+考虑任意 $(x,y)\in R_1^{-1}\cdot R_2^{-1}$，根据复合关系的定义，存在 $z$ 使得 $xR_2^{-1}z \quad\text{且}\quad zR_1^{-1}y$。根据逆关系的定义， $zR_2x \quad\text{且}\quad yR_1z$。于是 $yR_1z \quad\text{且}\quad zR_2x$。根据复合关系的定义， $y(R_2\cdot R_1)x$。再根据逆关系的定义， $x(R_2\cdot R_1)^{-1}y$，故 $(x,y)\in (R_2\cdot R_1)^{-1}$，从而 $R_1^{-1}\cdot R_2^{-1} \subseteq (R_2\cdot R_1)^{-1}$。    
+
+综上可得 $(R_2\cdot R_1)^{-1} = R_1^{-1}\cdot R_2^{-1}$。    
+ ■        
+
+**习题 2.2.6** 举例说明： $R_2\cdot R_1 \neq R_1\cdot R_2$，即关系复合一般不满足交换律。    
+**解**    
+设 $R_1=\lbrace (1,2)\rbrace , \qquad R_2=\lbrace (2,3)\rbrace$。    
+
+先求 $R_2\cdot R_1$。由于 $R_12,\qquad 2R_23$，根据复合关系的定义， $1(R_2\cdot R_1)3$。故 $R_2\cdot R_1=\lbrace (1,3)\rbrace$。    
+
+再求 $R_1\cdot R_2$。若 $(x,y)\in R_1\cdot R_2$，则根据复合关系的定义，必须存在元素 $z$，使得 $xR_2z,\qquad zR_1y$。但 $R_2=\lbrace (2,3)\rbrace$，故只能 $x=2,\quad z=3$。    
+
+另一方面， $R1={(1,2)},R_1=\lbrace (1,2)\rbrace$。要求 $3R_1y$ 显然不成立。因此不存在满足条件的中间元素 $z$。故 $R_1\cdot R_2=\varnothing$。于是 $R_2\cdot R_1=\lbrace (1,3)\rbrace  \neq \varnothing=R_1\cdot R_2$。因此，关系复合一般不满足交换律。    
+
+**习题 2.2.7** 证明： $\mathrm{dom}(R_2\cdot R_1) \subseteq \mathrm{dom}(R_1)$， $\mathrm{ran}(R_2\cdot R_1) \subseteq \mathrm{ran}(R_2)$，并举例说明上述包含关系未必是相等关系。    
+**证明**    
+先证 $\mathrm{dom}(R_2\cdot R_1) \subseteq \mathrm{dom}(R_1)$。    
+考虑任意 $x\in\mathrm{dom}(R_2\cdot R_1)$，根据定义域的定义，存在 $y$ 使得 $x(R_2\cdot R_1)y$。根据复合关系的定义，存在 $z$ 使得 $xR_1z \quad\text{且}\quad zR_2y$。由 $xR_1z$ 可知，存在元素 $z$ 使得 $(x,z)\in R_1$。根据定义域的定义， $x\in\mathrm{dom}(R_1)$，故 $\mathrm{dom}(R_2\cdot R_1) \subseteq \mathrm{dom}(R_1)$。    
+
+下证 $\mathrm{ran}(R_2\cdot R_1) \subseteq \mathrm{ran}(R_2)$。    
+考虑任意 $y\in\mathrm{ran}(R_2\cdot R_1)$，根据值域的定义，存在 $x$ 使得 $x(R_2\cdot R_1)y$。根据复合关系的定义，存在 $z$ 使得 $xR_1z \quad\text{且}\quad zR_2y$。由 $zR_2y$ 可知，存在元素 $z$ 使得 $(z,y)\in R_2$。根据值域的定义， $y\in\mathrm{ran}(R_2)$，故 $\mathrm{ran}(R_2\cdot R_1) \subseteq \mathrm{ran}(R_2)$。
+
+**例子**    
+设 $R_1=\lbrace (1,2),(3,4)\rbrace , \qquad R_2=\lbrace (2,5)\rbrace$，则 $R_2\cdot R_1 = \lbrace (1,5)\rbrace$。于是 $\mathrm{dom}(R_2\cdot R_1) = \lbrace 1\rbrace$，而 $\mathrm{dom}(R_1) = \lbrace 1,3\rbrace$。因此 $\mathrm{dom}(R_2\cdot R_1) \subsetneq \mathrm{dom}(R_1)$。另一方面， $\mathrm{ran}(R_2\cdot R_1) = \lbrace 5\rbrace$ 
+而 $\mathrm{ran}(R_2) = \lbrace 5\rbrace$，此处恰好相等。若改取 $R_2=\lbrace (2,5),(6,7)\rbrace$，则 $R_2\cdot R_1 = \lbrace (1,5)\rbrace$。于是 $\mathrm{ran}(R_2\cdot R_1) = \lbrace 5\rbrace$，而 $\mathrm{ran}(R_2) = \lbrace 5,7\rbrace$，故 $\mathrm{ran}(R_2\cdot R_1) \subsetneq \mathrm{ran}(R_2)$。    
+
+综上，上述两个包含关系一般都不能改写为等号。    
+ ■        
+
+**习题 2.2.8**    
+(1) 设 $R$ 为关系，求 $R^{-1}\cdot R$。    
+**解**    
+根据复合关系的定义， $(x,y)\in R^{-1}\cdot R$ 当且仅当存在元素 $z$，使得 $xRz \quad\text{且}\quad zR^{-1}y$。根据逆关系的定义， $zR^{-1}y \iff yRz$。因此， $(x,y)\in R^{-1}\cdot R$ 当且仅当存在元素 $z$，使得 $xRz \quad\text{且}\quad yRz$。故 $R^{-1}\cdot R = \lbrace (x,y)\mid \exists z,\ xRz\text{ 且 }yRz\rbrace$。    
+ ■        
+💡**注意**：    
+$(x,y)\in R^{-1}\cdot R$ 并不意味着 $xRy$ 或 $yRx$，它只意味着存在某个元素 $z$，使得 $xRz\text{ 且 } yRz$。因此， $R^{-1}\cdot R$ 一般与 $R$ 并不是同一个关系。    
+
+(2) 设 $R$ 为自然数集 $\mathbb N$ 上的小于关系，即 $R = \lbrace (m,n)\mid m<n \rbrace$，求 $R\cdot R$。    
+**解**    
+根据复合关系的定义， $(m,n)\in R\cdot R$ 当且仅当存在自然数 $k$，使得 $m<k \quad\text{且}\quad k<n$。于是 $(m,n)\in R\cdot R$ 当且仅当存在自然数 $k$ 满足 $m<k<n$。由于自然数之间存在这样的 $k$ 当且仅当 $n-m\ge2$，故 $R\cdot R = \lbrace(m,n)\mid m+1<n\rbrace$，即 $R\cdot R = \lbrace(m,n)\mid n-m\ge2\rbrace$。    
+ ■        
+
+**定理 2.2.2**    
+设 $R$ 为二元关系， $A,B\subseteq\mathrm{dom}(R)$为两个集合，则     
+(1) $R[A] \subseteq R[A\cup B]$。     
+**证明**     
+考虑任意 $y\in R[A]$，根据像的定义，存在 $x\in A$ 使得 $xRy$。由于 $A\subseteq A\cup B$，故 $x\in A\cup B$。而根据像的定义， $R[A\cup B] = \lbrace y\mid \exists x\in A\cup B,\ xRy\rbrace$，即 $y\in R[A\cup B]$，因此 $R[A]\subseteq R[A\cup B]$。    
+ ■        
+
+(3) $R[A\cap B] \subseteq R[A]\cap R[B]$。    
+**证明**    
+考虑任意 $y\in R[A\cap B]$，根据像的定义，存在 $x\in A\cap B$，使得 $xRy$。由交集的定义可知， $x\in A \quad\text{且}\quad x\in B$。于是根据像的定义，
+$y\in R[A]$ 且 $y\in R[B]$，因此 $y\in R[A]\cap R[B]$。故 $R[A\cap B] \subseteq R[A]\cap R[B]$。    
+ ■        
+
+
+💡**注意**    
+一般情况下， $R[A\cap B] \neq R[A]\cap R[B]$。    
+原因在于， $R[A]\cap R[B]$ 中的同一个元素 $y$，可能分别由 $A$ 和 $B$ 中**不同**的元素对应得到，而不一定存在一个属于 $A\cap B$ 的元素对应到 $y$。因此只能得到包含关系，而未必能够得到相等关系。    
+
+例如：    
+设 $R=\lbrace (a,b),(a,c),(b,c),(c,b)\rbrace  A=\lbrace a,b\rbrace$， $B=\lbrace b,c\rbrace$，则 $A\cap B=\lbrace b\rbrace$。因此， $R[A\cap B] = R[\lbrace b\rbrace ] = \lbrace c\rbrace$。    
+另一方面 $R[A] = \lbrace b,c\rbrace$ ， $R[B] = \lbrace b,c\rbrace$，于是 $R[A]\cap R[B] = \lbrace b,c\rbrace$。故 $R[A\cap B] = \lbrace c\rbrace  \neq \lbrace b,c\rbrace  = R[A]\cap R[B]$。    
+
+**习题 2.2.9**    
+设 $R_1,R_2$ 为两个关系， $A$ 为集合，证明 $(R_2\cdot R_1)[A] = R_2[R_1[A]]$。    
+**证明**    
+下面分别证明两个集合互相包含，从而通过外延公理证明命题成立。    
+
+先证 $(R_2\cdot R_1)[A]\subseteq R_2[R_1[A]]$：    
+设 $y\in(R_2\cdot R_1)[A]$，根据像的定义，存在 $x\in A$ 使得 $(x,y)\in R_2\cdot R_1$。    
+由关系复合的定义，存在某个元素 $z$，满足 $(x,z)\in R_1, \quad (z,y)\in R_2$。由 $x\in A,\quad (x,z)\in R_1$ 可知 $z\in R_1[A]$。再由 $(z,y)\in R_2$ 得到 $y\in R_2[R_1[A]]$。    
+因此， $(R_2\cdot R_1)[A] \subseteq R_2[R_1[A]]$。    
+
+再证 $R_2[R_1[A]] \subseteq (R_2\cdot R_1)[A]$：    
+设 $y\in R_2[R_1[A]]$，根据像的定义，存在 $z\in R_1[A]$ 使得 $(z,y)\in R_2$。又因为 $z\in R_1[A]$，所以存在 $x\in A$，满足 $(x,z)\in R_1$。    
+于是 $(x,z)\in R_1,\quad (z,y)\in R_2$，根据关系复合的定义， $(x,y)\in R_2\cdot R_1$。再由 $x\in A$，得到 $y\in(R_2\cdot R_1)[A]$。    
+因此， $R_2[R_1[A]] \subseteq (R_2\cdot R_1)[A]$。    
+
+综上， $(R_2\cdot R_1)[A] = R_2[R_1[A]]$。    
+ ■        
+
+**习题 2.2.10** 设 $R$ 为关系，证明： $R[\varnothing]=\varnothing,\quad R^{-1}[\varnothing]=\varnothing$。    
+**证明**    
+先证明 $R[\varnothing]=\varnothing$。    
+设 $y\in R[\varnothing]$，根据像的定义，存在 $x\in\varnothing$ 使得 $(x,y)\in R$。然而空集没有任何元素，因此不存在这样的 $x$，产生矛盾。故 $R[\varnothing]$ 中没有元素，即 $R[\varnothing]=\varnothing$。    
+再证明 $R^{-1}[\varnothing]=\varnothing$。    
+设 $y\in R^{-1}[\varnothing]$，根据像集的定义，存在 $x\in\varnothing$ 使得 $(x,y)\in R^{-1}$。同样，由于空集没有任何元素，这样的 $x$ 不存在，矛盾。因此， $R^{-1}[\varnothing]$ 也没有元素，即 $R^{-1}[\varnothing]=\varnothing$。    
+综上， $R[\varnothing]=\varnothing, \qquad R^{-1}[\varnothing]=\varnothing$。    
+
+**习题 2.2.11** 设 $R$ 为集合 $A$ 上的关系，证明：    
+(1) $R \text{ 是自反的 } \Longleftrightarrow \mathrm{ID}_A \subseteq R$。    
+**证明**    
+先证必要性。    
+设 $R$ 是自反的。任取 $(x,x)\in ID_A$，则 $x\in A$。由于 $R$ 具有自反性，因此 $xRx$，即 $(x,x)\in R$。因此 $ID_A\subseteq R$。    
+再证充分性。    
+设 $ID_A\subseteq R$。任取 $x\in A$，则 $(x,x)\in ID_A$。 由 $ID_A\subseteq R$ 可知 $(x,x)\in R$，即 $xRx$。因此 $R$ 是自反的。    
+ ■        
+
+(2) $R \text{ 是对称的 } \Longleftrightarrow R=R^{-1}$。    
+**证明**    
+先证必要性。    
+设 $R$ 是对称的。任取 $(x,y)\in R$，由于 $R$ 具有对称性，有 $yRx$，即 $(y,x)\in R$。根据逆关系的定义， $(x,y)\in R^{-1}$。因此 $R\subseteq R^{-1}$。另一方面，任取 $(x,y)\in R^{-1}$。根据逆关系的定义，有 $(y,x)\in R$。由于 $R$ 具有对称性，有 $xRy$，即 $(x,y)\in R$。因此 $R^{-1}\subseteq R$。故 $R=R^{-1}$。    
+再证充分性。    
+设 $R=R^{-1}$。任取 $(x,y)\in R$，由于 $R=R^{-1}$，故 $(x,y)\in R^{-1}$。根据逆关系的定义，有 $(y,x)\in R$，即 $yRx$。因此 $R$ 是对称的。     
+ ■        
+ 
+(3) $R \text{ 是传递的 } \Longleftrightarrow R\cdot R \subseteq R$。    
+**证明**     
+先证必要性。    
+设 $R$ 是传递的。任取 $(x,z)\in R\cdot R$，根据关系复合的定义，存在 $y\in A$，使得 $(x,y)\in R,\quad (y,z)\in R$。由于 $R$ 具有传递性，有 $xRz$，即 $(x,z)\in R$。因此 $R\cdot R\subseteq R$。     
+再证充分性。    
+设 $R\cdot R\subseteq R$。任取 $xRy,\quad yRz$，根据关系复合的定义， $(x,z)\in R\cdot R$。由 $R\cdot R\subseteq R$ 可知 $(x,z)\in R$，即 $xRz$。因此 $R$ 是传递的。    
+ ■        
+
+**习题 2.2.12** 设 $R$ 为集合 $A$ 上的偏序， $B\subseteq A$。    
+(1) $R^{-1}$ 也是 $A$ 上的偏序；    
+**证明**    
+显然，需要证明 $R^{-1}$ 具有自反性、反对称性[^6]和传递性。    
+**(i) 自反性**   
+任取 $x\in A$。由于 $R$ 是偏序，因此 $xRx$。而逆关系只是交换有序对的两个分量，对于有序对 $(x,x)$ 而言，交换前后并没有变化，因此仍有 $xR^{-1}x$。故 $R^{-1}$ 具有自反性。    
+
+**(ii) 反对称性**    
+设 $xR^{-1}y,\quad yR^{-1}x$。根据逆关系的定义， $yRx,\quad xRy$。由于 $R$ 具有反对称性，因此必然有 $x=y$。故 $R^{-1}$ 具有反对称性。    
+
+**(iii) 传递性**    
+设 $xR^{-1}y,\quad yR^{-1}z$。根据逆关系的定义， $yRx,\quad zRy$。由于 $R$ 具有传递性， $zRx$。再由逆关系的定义，$xR^{-1}z$。故 $R^{-1}$ 具有传递性。    
+
+综上， $R^{-1}$ 是 $A$ 上的偏序。    
+ ■        
+
+(2) $R\!\upharpoonright_B$​ 是 $B$ 上的偏序。其中， $R\!\upharpoonright_B$ 表示关系 $R$ 在集合 $B$ 上的限制，即 $R\!\upharpoonright_B = R\cap(B\times B)$。[^7]    
+**证明**    
+显然需要证明 $R\upharpoonright_B$ 具有自反性、反对称性和传递性。
+
+**(i) 自反性**    
+任取 $x\in B$。由于 $R$ 是偏序， $xRx$。又因为 $(x,x)\in B\times B$，故 $(x,x)\in R\cap(B\times B)=R\upharpoonright_B$。因此 $x(R\upharpoonright_B)x$。故 $R\upharpoonright_B$ 具有自反性。    
+
+**(iii) 反对称性**    
+设 $x(R\upharpoonright_B)y,\quad y(R\upharpoonright_B)x$。根据限制关系的定义， $xRy,\quad yRx$。由于 $R$ 具有反对称性， $x=y$。故 $R\upharpoonright_B$ 具有反对称性。    
+
+**(iii) 传递性**    
+设 $x(R\upharpoonright_B)y,\quad y(R\upharpoonright_B)z$。根据限制关系的定义， $xRy,\quad yRz$。由于 $R$ 具有传递性， $xRz$。又因为 $x,z\in B$，故 $(x,z)\in B\times B$。因此 $(x,z)\in R\cap(B\times B)=R\upharpoonright_B$，即 $x(R\upharpoonright_B)z$。故 $R\upharpoonright_B$ 具有传递性。    
+
+综上，$R\upharpoonright_B$ 是 $B$ 上的偏序。    
+ ■        
+
+
+**引理 2.2.4**（偏序与严格偏序的关系）    
+(1) 设 $R$ 为集合 $A$ 上的偏序。定义 $A$ 上的关系 $R'=R\setminus ID_A$，即对任意 $x,y\in A$， $(x,y)\in R' \Longleftrightarrow (xRy\text{ 且 }x\neq y)$。则 $R'$ 为 $A$ 上的严格偏序。    
+**证明**    
+显然，需要证明 $R'$ 具有**反自反性**[^4]、**禁对称性**[^5]和**传递性**。    
+**(i) 反自反性**    
+任取 $x\in A$。根据 $R'$ 的定义，若有 $xR'x$，则必须同时满足 $xRx$ 且 $x\neq x$。由于恒有 $x=x$，故不可能满足 $x\neq x$。因此 $(x,x)\notin R'$，即 $\neg(xR'x)$。所以 $R'$ 具有反自反性。    
+
+**(ii) 禁对称性**    
+设 $xR'y$。根据 $R'$ 的定义， $xRy$ 且 $x\neq y$。若再有 $yR'x$，则同样有 $yRx$。于是 $xRy,\quad yRx$。由于 $R$ 是偏序，具有反对称性，因此 $x=y$，这与 $x\neq y$ 矛盾。故不可能同时有 $xR'y$ 和 $yR'x$。因此， $R'$ 具有禁对称性。     
+
+**(iii)传递性**    
+为了证明 $R'$ 具有传递性，需要证明：若 $xR'y$ 且 $yR'z$，则 $xR'z$。    
+设 $xR'y,\quad yR'z$。根据 $R'$ 的定义， $xRy,\quad x\neq y$，并且 $yRz,\quad y\neq z$。    
+下面证明 $xR'z$。    
+根据 $R'$ 的定义，只需证明 $xRz$ 且 $x\neq z$。由 $R$ 的传递性， $xRz$。    
+再证明 $x\neq z$。    
+若 $x=z$，则有 $xRy,\quad yRx$。由 $R$ 的反对称性可知 $x=y$，这与 $x\neq y$ 矛盾。因此 $x\neq z$。    
+于是 $xRz$ 且 $x\neq z$。根据 $R'$ 的定义， $xR'z$。故 $R'$ 具有传递性。    
+
+综上， $R'$ 是 $A$ 上的严格偏序。    
+ ■        
+
+(2) 设 $R$ 为 $A$ 上的严格偏序。定义 $A$ 上的关系 $R'=R\cup ID_A$，即对任意 $x,y\in A$， $xR'y \Longleftrightarrow (xRy\text{ 或 }x=y)$。则 $R'$ 为 $A$ 上的偏序。    
+**证明**     
+显然，需要证明 $R'$ 具有**自反性**、**反对称性**和**传递性**。    
+**(i) 自反性**    
+任取 $x\in A$。由于 $(x,x)\in ID_A$，且 $ID_A\subseteq R'$，因此 $(x,x)\in R'$，即 $xR'x$。故 $R'$ 具有自反性。    
+
+**(ii) 反对称性**     
+设 $xR'y,\quad yR'x$。下面证明 $x=y$。    
+若 $x\neq y$，根据 $R'$ 的定义，由于 $(x,y)\notin ID_A,\quad (y,x)\notin ID_A$，因此 $xRy,\quad yRx$。这与 $R$ 的禁对称性矛盾。因此假设 $x\neq y$ 不成立，只能有 $x=y$。故 $R'$ 具有反对称性。    
+
+**(iii) 传递性**    
+为了证明 $R'$ 具有传递性，需要证明：若 $xR'y$ 且 $yR'z$，则 $xR'z$。    
+设 $xR'y,\quad yR'z$。分四种情况讨论。    
+① 若 $x=y$，且 $y=z$，则 $x=z$，故 $xR'z$。    
+② 若 $x=y$，且 $yRz$，则 $xRz$，故 $xR'z$。    
+③ 若 $xRy$，且 $y=z$，则 $xRz$，故 $xR'z$。    
+④ 若 $xRy$，且 $yRz$，则由 $R$ 的传递性可得 $xRz$，故 $xR'z$。    
+综上，任意情况下都有 $xR'z$。因此， $R'$ 具有传递性。    
+
+综上， $R'$ 是 $A$ 上的偏序。    
+ ■        
+
+
+[^1]: 这种形如 (A 且 A)⟺A 的规则被称作析取运算的幂等律，下同。
+
+[^2]: 容易扩展地得出，再前述公理体系下的集合论中，空集是任意集合的子集。
+
+[^3]: 需要注意“先取并集再取幂集”和“先取幂集再取并集”的差别。
+
+[^4]: 若一个关系 $R$ 满足：对于任意 $x$，都有 $x\not R x$，则称 $R$ **具有反自反性**（irreflexive）。
+
+[^5]: 若一个关系 $R$ 满足：对于任意 $x,y$，只要 $xRy$，就有 $yRx$ 不成立，则称 $R$ **具有禁对称性**（asymmetry）。
+
+[^6]: 若一个关系 $R$ 满足：对于任意 $x,y$，若 $xRy$ 且 $yRx$，则 $x=y$，则称 $R$ **具有反对称性**（antisymmetry）。
+
+[^7]: 注意，$R\upharpoonright_B$ 是定义在集合 $B$ 上的关系，因此证明自反性时只需任取 $x\in B$，而不必取 $x\in A$。
