@@ -1,6 +1,7 @@
 ---
 title: 数理逻辑项目附录
 description: 附录
+math: true
 
 categories:
   - 逻辑学
